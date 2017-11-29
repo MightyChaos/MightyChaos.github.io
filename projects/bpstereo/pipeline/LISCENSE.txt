@@ -1,0 +1,6 @@
+One can use this source code for research purpose only, all rights reserved.
+If your system brokes because of this code, that's your problem, not mine!
+If you use this code,please cite "Chaoyang Wang, Lijuan Wang, Yasuyuki Matsushita, Bojun Huang, Magnetro Chen, Frank K. Soong,Binocular Photometric Stereo Acquisition and Reconstruction for 3D Talking Head Applications, INTERSPEECH 2013".
+
+Wang Chaoyang
+2014-01-17

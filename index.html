@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Wang Chaoyang's Homepage</title>
+<meta name="author" content="Wang Chaoyang">
+<meta name="description" content="Wang Chaoyang's Homepage">
+<meta name="keywords" content="Chaoyang Wang, Wang Chaoyang, deep-LK, binocular, photometric, stereo, multi-branched hierarchical segmentation">
+<style type="text/css">
+p {font-size:14px;font-family:arial;color:black;}
+li {font-size:14px;font-family:arial;color:black;}
+h1 {font-size:30px;font-family:arial;color:gray;}
+h2 {font-size:25px;font-family:arial;color:gray;}
+h3 {font-size:18px;font-family:arial;color:black;margin-top:0em;margin-bottom:0em}
+</style>
+</head>
+
+<body leftmargin = "50">
+<table border="0">
+	<tr>
+		<td width="200">
+		<img src="night_king.jpg" alt="Smiley face" width="150" height="150">
+		</td>
+		<td width="500">
+		<table border="0">
+			<tr>
+			<h1>Chaoyang Wang</h1>
+			</tr>
+			<tr>
+				<ul style="list-style-type:none">
+					<li>MSR student of <a href="https://www.ri.cmu.edu/">the Robotics Institute Carnegie Mellon University</a></li>
+					<li>Supervised by <a href="http://www.simonlucey.com/">Prof. Simon Lucey</a></li>
+					<li>Research interest: computer vision, machine learning.</li>
+					<li>Contact: chaoyanw[at]andrew.cmu.edu</li>
+					<li><strong><a href="cv.pdf">resume</a></strong></li>
+				</ul>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+
+<hr>
+<h2>Recent Works</h2>
+<table border="0">
+
+<tr>
+	<td valign="top" width="250"><img src="projects/cvpr18_chaoyang/img.png" width="200"></td>
+	<td valign="top" width="600">
+	<h3>Learning Depth from Monocular Videos using Direct Methods</h3>
+	<p><strong>Chaoyang Wang</strong>, Jose Miguel Buenaposada, Rui Zhu, Simon Lucey<br />
+	<strong>[
+	<a href="">To be arxived</a>
+	]
+</strong><br />
+Unsupervised strategies to learning a depth estimator are particularly
+appealing as they can utilize much larger and varied monocular video datasets during
+learning without the need for ground truth depth or stereo. In previous works,
+separate pose and depth CNN predictors had to be determined such that
+their joint outputs minimized the photometric error. Inspired by
+recent advances in direct mehtods for visual SLAM, we argue that the depth CNN predictor can be learned without a pose CNN predictor.
+Further, we demonstrate empirically that incorporation of a differentiable implementation of DVO,
+along with a novel depth normalization strategy - substantially
+ improves performance over state of the art that use monocular videos for training. </p>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top" width="250"><img src="projects/icra18/img.png" width="200"></td>
+	<td valign="top" width="600">
+	<h3>Deep-LK for Efficient Adaptive Object Tracking</h3>
+	<p><strong>Chaoyang Wang</strong>, Hamed Kiani, Chen-Hsuan Lin, Simon Lucey<br />
+	<strong>[
+	<a href="https://arxiv.org/abs/1705.06839">PDF</a>,
+	<a href="https://youtu.be/1q3GrYf9k-E">demo</a>
+	]
+</strong><br />
+First, we demonstrate that there is a theoretical relationship between siamese regression networks like GOTURN and the classical Inverse Compositional Lucas & Kanade (IC-LK) algorithm.
+Further, we demonstrate that unlike GOTURN IC-LK adapts its regressor to the appearance of the current tracked frame.
+Second, we propose a novel framework for object tracking inspired by the IC-LK framework, which we refer to as Deep-LK.
+Finally, we show impressive results demonstrating that, with end-to-end learned features, Deep-LK substantially outperforms GOTURN and demonstrates comparable tracking performance against current state-of-the-art deep trackers on high frame-rate sequences whilst being an order of magnitude (100 FPS) computationally efficient.</p>
+	</td>
+</tr>
+
+
+<tr>
+	<td width="250"><img src="projects/cvpr18_rui/img.png" width="200"></td>
+	<td valign="top" width="600">
+	<h3>Semantic Photometric Bundle Adjustment on Natural Sequences</h3>
+	<p>Rui Zhu, <strong>Chaoyang Wang</strong>, Ziyan Wang, Chen-Hsuan Lin, Simon Lucey<br />
+	<strong>[
+	<a href="">To be arxived</a>
+	]</strong><br />
+A fundamental drawback to (photometric) bundle adjustment
+is: (i) their reliance on having to view all points on
+the object, and (ii) for the object surface to be well textured.
+To circumvent these limitations we propose semantic
+PBA which incorporates a 3D object prior, obtained
+through deep learning, within the photometric bundle adjustment
+problem. We demonstrate state of the art performance
+in comparison to leading methods for object reconstruction
+across numerous natural sequences.
+	</p>
+	</td>
+</tr>
+</table>
+<hr>
+<h2>Publications</h2>
+
+<table border="0">
+
+<tr>
+	<td width="250"><img src="projects/wacv18/img.png" width="200"></td>
+	<td valign="top" width="600">
+	<h3>Object-Centric Photometric Bundle Adjustment with Deep Shape Prior</h3>
+	<p>Rui Zhu, <strong>Chaoyang Wang</strong>,  Chen-Hsuan Lin, Simon Lucey<br />
+	WACV 2018
+	<strong>[
+	<a href="https://arxiv.org/abs/1711.01470">PDF</a>
+	]
+	</strong></p>
+	</td>
+</tr>
+<!--cur project1-->
+<tr>
+	<td width="250"><img src="projects/iccv17/iccv17.png" width="200"></td>
+	<td valign="top" width="600">
+	<h3>Rethinking Reprojection: Closing the Loop for Pose-aware Shape Reconstruction from a Single Image</h3>
+	<p>Rui Zhu, Hamed Kiani, <strong>Chaoyang Wang</strong>, Simon Lucey<br />
+	ICCV 2017
+	<strong>[
+	<a href="https://arxiv.org/abs/1707.04682">PDF</a>
+	]
+	</strong></p>
+	</td>
+</tr>
+
+<!--cur project1-->
+<tr>
+	<td width="250"><img src="projects/objprop/img.png" width="200"></td>
+	<td valign="top" width="600">
+	<h3>Object Proposal by Multi-branched Hierarchical Segmentation</h3>
+	<p><strong>Chaoyang Wang</strong>, Long Zhao, Shuang Liang, Liqing Zhang, Jinyuan Jia, Yichen Wei<br />
+	CVPR 2015
+	<strong>[
+	<a href="projects/objprop/Wang_Object_Proposal_by_2015_CVPR_paper.pdf">PDF</a>,
+	<a href="http://pan.baidu.com/s/1oLDQe">VOC2007 test result</a>
+	]
+	</strong></p>
+	</td>
+</tr>
+<!--project 2 -->
+<tr>
+	<td width="250"><img src="projects/bpstereo/img1.png" width="200"></td>
+	<td valign="top" width="600">
+	<h3>Binocular Photometric Stereo Acquisition and Reconstruction for 3D Talking Head Applications</h3>
+	<p><strong>Chaoyang Wang</strong>, Lijuan Wang, Yasuyuki Matsushita, Bojun Huang, Magnetro Chen, Frank K. Soong<br /> INTERSPEECH 2013
+	<strong>[
+	<a href="projects/bpstereo/IS130859.PDF">PDF</a>,
+	<a href="http://research.microsoft.com/en-us/projects/hd_talking_head/">web</a>,
+	<a href="projects/bpstereo/demo.avi">demo</a>,
+	<a href="projects/bpstereo/bpstereo.zip">code</a>
+	]
+	</strong></p>
+	</td>
+</tr>
+
+</table>
+
+<hr>
+<h2>Course Projects</h2>
+<table>
+<tr><h3>Multi-task Asynchronous Deep Reinforcement Learning</h3></tr>
+<tr>
+	<td width="250"><img src="projects/703/img.png" width="200"></td>
+	<td valign="top" width="600"> <p>We propose a computationally efficient multi-task
+asynchronous learning framework, which requires only multi-threading on CPU
+for training, generalizable to a wide variety of RL methods, and in theory, scales
+well to the number of tasks. We test the proposed method with Atari games.
+Through the experiment, we not only show that asynchronous multi-task training
+is able to compress the policy and value networks for the agent through aggressive
+parameter sharing, but also observe significant performance gain on several
+games.[<a href="projects/703/RL_project.pdf">PDF</a>]</p></td>
+</tr>
+</table>
+<table>
+<tr><h3>Wasserstein Training of Deep Boltzmann Machines</h3></tr>
+<tr>
+	<!-- <td width="250"><img src="projects/703/img.png" width="200"></td> -->
+	<td valign="top" width="850"> <p>We proposed a general Wasserstein training method for graphical models by replacing the standard KL-divergence with Wasserstein distance as novel loss functions.
+		And we developed Wasserstein training of
+RBMs and DBMs as specific examples. Finally,
+we experimentally explored Wasserstein training
+of RBMs and DBMs for digit generation with
+MNIST dataset, and showed the superiority of
+Wasserstein training compared to traditional KLdivergence
+training.[<a href="projects/708/pgm_project_final.pdf">PDF</a>]</p> </td>
+</tr>
+</table>
+
+<hr>
+<h2>Software</h2>
+<table border="0">
+<ul>
+	<li><strong>Learning Cost-Sensitive Decsion Policy</strong><br />
+	Optimize decision thresholds for cascaded detectors.
+	<strong>(
+	<a href="https://wcy@bitbucket.org/wcy/learnpolicy.git">code</a>
+	)</li>
+<ul/>
+</table>
+
+<hr>
+<i>Last modified by Wang Chaoyang, 2017-12-5.</i>
+
+<hr>
+<a href="http://www.clustrmaps.com/map/bcmi.sjtu.edu.cn/~wangchaoyang/" title="Visitor Map for bcmi.sjtu.edu.cn/~wangchaoyang/"><img src="//www.clustrmaps.com/map_v2.png?u=OtSP&d=9x8bR--TJRSFzoEcH4XAJ9uHZ0B7arxuRydAsa3q86o" /></a>
+
+</body>
+</html>
