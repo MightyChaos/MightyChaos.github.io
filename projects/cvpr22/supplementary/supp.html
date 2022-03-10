@@ -1,0 +1,371 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<link rel="stylesheet" type="text/css" href="./styles.css" />
+
+<html>
+<head>
+	<title>Neural Prior for Trajectory Estimation</title>
+	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Neural Prior for Trajectory Estimation</span>
+        <br>
+        <span style="font-size:36px">Supplementary Material</span>
+		<table align=center width=600px>
+			<table align=center width=600px>
+				<tr>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px">Paper ID: 9911</span>
+						</center>
+					</td>
+				</tr>
+			</table>
+		</table>
+	</center>
+
+    <br>
+	<hr>
+    <br>
+
+	<table align=center width=900px>
+		<center><h1>Visual results for trajectory estimation on Argoverse dataset</h1></center>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+				We provide more video results for trajecoty estimation on the Argoverse dataset. 
+                As mentioned in the main paper, we used a sequence of 25 lidar frames sampled at 10 Hz, 
+                and estimated the dense trajectory for each point.
+                The following videos show the estimated trajectories at each frame.
+                Our method directly ouputs the full trajectories, while NSFP [<a href=#cite_nsfp id='ref_nsfp'>1</a>] 
+                used forward Euler integration,
+                and FlowStep3D [<a href=#cite_flowstep3d id='ref_flowstep3d'>2</a>] used K-nearest neighbor integration.
+                Colored points represent the point cloud, and the gradient gray lines denote the estimated trajecory.
+                The light gray lines are trajectories in older frames, and the darker gray lines indicate the most recent motions.
+            </div>
+            </center>
+		</tr>
+        <br>
+        <tr>
+            <th style='font-size: 22px'>NTP (Ours)</th>
+            <th style='font-size: 22px'>NSFP (Euler Int.)</th>
+            <th style='font-size: 22px'>Flowstep3D (KNN Int.)</th>
+        </tr>
+		<tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/b1c_ntp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/b1c_nsfp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/b1c_flowstep3d.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/6db_ntp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/6db_nsfp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/6db_flowstep3d.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/2d1_ntp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/2d1_nsfp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/2d1_flowstep3d.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/7d3_ntp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/7d3_nsfp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/7d3_flowstep3d.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/00c_ntp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/00c_nsfp.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/traj/00c_flowstep3d.gif'>
+                </center>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+    <table align=center width=900px>
+		<center><h1>Failure case</h1></center>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+				When the point cloud is too sparse, the trajectory estimation across a long sequence might suffer from 
+                lacking adequate corresponding query points.
+                We provide a failure case below to show how the sparse point affects our method.
+            </div>
+            </center>
+		</tr>
+        <br>
+		<tr>
+			<td>
+                <center>
+				    <img class='round' style='width:450px' src='./resources/traj/failure_f9f_ntp.gif'>
+                </center>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<hr>
+    <table align=center width=900px>
+		<center><h1>Point cloud densification</h1></center>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+                We provide more visual results on the Argoverse dataset. For each example, 
+                the upper row shows the densified depths compared to the sparse depth, 
+                and the bottom row shows the densified point clouds compared to the original sparse point cloud. 
+            </div>
+            </center>
+		</tr>
+        <br>
+        <tr>
+            <th style='font-size: 22px'>Sparse reference frame</th>
+            <th style='font-size: 22px'>NTP (Ours)</th>
+            <th style='font-size: 22px'>NSFP (Euler Int.)</th>
+            <th style='font-size: 22px'>Flowstep3D (KNN Int.)</th>
+        </tr>
+		<tr style="outline: thin solid">
+			<td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_sparse_2d1.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_ntp_2d1.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_nsfp_2d1.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_flowstep3d_2d1.png'>
+                </center>
+			</td>
+		</tr>
+        <tr style="outline: thin solid">
+			<td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_sparse_2d1.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_ntp_2d1.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_nsfp_2d1.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_flowstep3d_2d1.png'>
+                </center>
+			</td>
+		</tr>
+        <tr style="outline: thin solid">
+			<td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_sparse_aeb.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_ntp_aeb.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_nsfp_aeb.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/depth_flowstep3d_aeb.png'>
+                </center>
+			</td>
+		</tr>
+        <tr style="outline: thin solid">
+			<td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_sparse_aeb.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_ntp_aeb.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_nsfp_aeb.png'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:273px' src='./resources/densification/pc_flowstep3d_aeb.png'>
+                </center>
+			</td>
+		</tr>
+	</table>
+	<br>
+    <br>
+    <table align=center width=900px>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+                Here are videos showing how the densified point clouds across the long sequence 
+                compared to the original sparse point clouds.
+            </div>
+            </center>
+		</tr>
+        <tr>
+            <th style='font-size: 22px'>Densified point cloud using NTP (Ours)</th>
+            <th style='font-size: 22px'>Original sparse point cloud</th>
+        </tr>
+        <br>
+		<tr style="outline: thin solid">
+			<td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:450px' src='./resources/densification/7d3_dense.gif'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:450px' src='./resources/densification/7d3_sparse.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr style="outline: thin solid">
+			<td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:450px' src='./resources/densification/aeb_dense.gif'>
+                </center>
+			</td>
+            <td style="outline: thin solid">
+                <center>
+				    <img class='round' style='width:450px' src='./resources/densification/aeb_sparse.gif'>
+                </center>
+			</td>
+		</tr>
+    </table>
+    <br>
+
+    <hr>
+    <table align=center width=900px>
+		<center><h1>Dense non-rigid structure from motion</h1></center>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+              We visualize our dense NRSfM result on the synthetic face traj. B sequence. Our reconstructed mesh is colored to visualize the  trajectory code field.
+            </div>
+            </center>
+		</tr>
+        <br>
+        <tr>
+            <th style='font-size: 22px'>NTP (Ours)</th>
+        </tr>
+		<tr>
+            <td>
+                <center>
+				    <img class='round' style='width:490px' src='./resources/nrsfm/faces_b.gif'>
+                </center>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<hr>
+	<table align=center width=850px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Reference</h1></center>
+					<div>[<a href=#ref_nsfp id='cite_nsfp'>1</a>] Li, Xueqian, Jhony Kaesemodel Pontes, and Simon Lucey. "Neural Scene Flow Prior." Thirty-Fifth Conference on Neural Information Processing Systems. 2021.</div>
+                    <div>[<a href=#ref_flowstep3d id='cite_flowstep3d'>2</a>] Kittenplon, Yair, Yonina C. Eldar, and Dan Raviv. "FlowStep3D: Model Unrolling for Self-Supervised Scene Flow Estimation." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2021.</div>
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
