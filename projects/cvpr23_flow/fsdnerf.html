@@ -1,0 +1,238 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<link rel="stylesheet" type="text/css" href="./styles.css" />
+
+<html>
+<head>
+	<title>Flow Supervision for Deformable NeRF</title>
+	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Get from Google Analytics -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px">Flow Supervision for Deformable NeRF</span>
+        <br>
+        <span style="font-size:36px">Supplementary Material</span>
+		<table align=center width=600px>
+			<table align=center width=600px>
+				<tr>
+					<td align=center width=100px>
+						<center>
+							<span style="font-size:24px">Paper ID: 8265</span>
+						</center>
+					</td>
+				</tr>
+			</table>
+		</table>
+	</center>
+
+    <br>
+	<hr>
+    <br>
+
+    Deformable neural radiance fields (i.e. Nerfies[<a href=#cite_nerfies id='ref_nerfies'>2</a>] , HyperNeRF[<a href=#cite_hypernerf id='ref_hypernerf'>3</a>] ) has been a notable technique to represent dynamic scenes and shows plausible space-time view synthesis results. However, the current implementations only warrant success on teleporting-like
+    videos whose camera motions are significantly more rapid than object motions. Quality of their results significantly decrease on videos with more rapid object motions [<a href=#cite_dycheck id='ref_dycheck'>4</a>]. For example, in the "broom" example below, both Nefies and HyperNeRF show significant artifacts when trained only using a single camera (i.e. the left camera from the stereo camera rig), as oppose to teleporting between the left and right cameras in the original paper of Nerfies.
+
+	<table align=center width=900px>
+		<center><h1>View synthesis result on Nerfies dataset [<a href=#cite_nerfies id='ref_nerfies'>2</a>] </h1></center>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+
+            </center>
+		</tr>
+        <br>
+        <tr>
+            <th style='font-size: 22px'>Ours</th>
+            <th style='font-size: 22px'>Nefies [<a href=#cite_nerfies id='ref_nerfies'>2</a>]</th>
+            <th style='font-size: 22px'>HyperNeRF [<a href=#cite_hypernerf id='ref_hypernerf'>3</a>]</th>
+            <th style='font-size: 22px'>NSFF [<a href=#cite_nsff id='ref_nsff'>4</a>]</th>
+        </tr>
+
+		<tr>
+			<td>
+                <center>
+				    <img class='round' style='width:150px' src='./resources/ours_broom.gif'>
+                </center>
+			</td>
+			<td>
+                <center>
+				    <img class='round' style='width:150px' src='./resources/nerfies_broom.gif'>
+                </center>
+			</td>
+			<td>
+                <center>
+				    <img class='round' style='width:150px' src='./resources/hypernerf_broom.gif'>
+                </center>
+			</td>
+			<td>
+                <center>
+				    <img class='round' style='width:150px' src='./resources/nsff_broom.gif'>
+                </center>
+			</td>
+		</tr>
+    </table>
+
+    <table align=center width=900px>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+                In this work, we conjecture the deficiency of these deformable NeRF-based methods is mainly due to lack of temporal regularization. The community has explored optical flow as an additional cue to help supervise the temporal transitions of other motion representations, such as scene flow fields [<a href=#cite_nsff id='ref_nsff'>4</a>]  and blend skinning fields. However, enforcing flow constraints with respect to a generic backward deformation field as in Nerfies is non-trivial. We propose an elegant solution to enforce flow constraints for deformable NeRFs, without inverting the backward deformation function.
+                Our method produces plausible view synthesis result, as well as accurate depth map and motions.
+            </center>
+        </tr>
+        <br>
+        <tr>
+            <th style='font-size: 22px'>novel view (right cam.)</th>
+            <th style='font-size: 22px'>depth</th>
+            <th style='font-size: 22px'>deformation</th>
+        </tr>
+		<tr>
+			<td>
+                <center>
+				    <img class='round' style='width:150px' src='./resources/ours_val.gif'>
+                </center>
+			</td>
+			<td>
+                <center>
+				    <img class='round' style='width:150px' src='./resources/ours_depth_val.gif'>
+                </center>
+			</td>
+			<td>
+                <center>
+				    <img class='round' style='width:150px' src='./resources/ours_dist_val.gif'>
+                </center>
+			</td>
+		</tr>
+
+    </table>
+
+	<table align=center width=900px>
+		<center><h1>View synthesis result on Nvidia dynamic view sythesis benchmark (NDVS) [<a href=#cite_nv id='ref_nv'>1</a>] </h1></center>
+        <tr>
+            <center>
+            <div style='width:90%; text-align:justify; float:center'>
+				We provide a side-by-side comparison between with and without optical flow supervision. Our implementation is based on Nerfies but use normalized device coordinate to deal with unbounded scenes in the NDVS dataset. 
+            Our method with flow supervision significantly outperforms the version without flow supervision. 
+            </center>
+		</tr>
+        <br>
+        <tr>
+            <th style='font-size: 22px'>with flow (Ours)</th>
+            <th style='font-size: 22px'>w/o flow (*Nefies[<a href=#cite_nerfies id='ref_nerfies'>2</a>])</th>
+        </tr>
+		<tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/with_flow/balloon/rgb.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/wo_flow/balloon/rgb.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/with_flow/balloon/depth.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/wo_flow/balloon/depth.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/with_flow/balloon/dist.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/wo_flow/balloon/dist.gif'>
+                </center>
+			</td>
+		</tr>
+
+        <br>
+        <tr>
+            <th style='font-size: 22px'>with flow (Ours)</th>
+            <th style='font-size: 22px'>w/o flow (*Nefies[<a href=#cite_nerfies id='ref_nerfies'>2</a>])</th>
+        </tr>
+		<tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/with_flow/playground/rgb.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/wo_flow/playground/rgb.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/with_flow/playground/depth.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/wo_flow/playground/depth.gif'>
+                </center>
+			</td>
+		</tr>
+        <tr>
+			<td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/with_flow/playground/dist.gif'>
+                </center>
+			</td>
+            <td>
+                <center>
+				    <img class='round' style='width:350px' src='./resources/wo_flow/playground/dist.gif'>
+                </center>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<hr>
+	<table align=center width=850px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Reference</h1></center>
+                    <div>[<a href=#ref_nv id='cite_nv'>1</a>] Yoon, Jae Shin, et al. "Novel view synthesis of dynamic scenes with globally coherent depths from a monocular camera." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2020.</div>
+					<div>[<a href=#ref_nerfies id='cite_nerfies'>2</a>] Park, Keunhong, et al. "Nerfies: Deformable neural radiance fields." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2021.</div>
+                    <div>[<a href=#ref_hypernerf id='cite_hypernerf'>3</a>] Park, K., Sinha, U., Hedman, P., Barron, J. T., Bouaziz, S., Goldman, D. B., ... & Seitz, S. M. (2021). Hypernerf: A higher-dimensional representation for topologically varying neural radiance fields. arXiv preprint arXiv:2106.13228.</div>
+                    <div>[<a href=#ref_nsff id='cite_nsff'>4</a>] Li, Zhengqi, et al. "Neural scene flow fields for space-time view synthesis of dynamic scenes." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2021.</div>
+                    <div>[<a href=#ref_dycheck id='cite_dycheck'>5</a>] Gao, Hang, et al. "Monocular dynamic view synthesis: A reality check." arXiv preprint arXiv:2210.13445 (2022).</div>
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
