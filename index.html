@@ -5,7 +5,7 @@
 <title>Wang Chaoyang's Homepage</title>
 <meta name="author" content="Wang Chaoyang">
 <meta name="description" content="Wang Chaoyang's Homepage">
-<meta name="keywords" content="Chaoyang Wang, Wang Chaoyang, deep-LK, binocular, photometric, stereo, multi-branched hierarchical segmentation, unsupervised learning depth">
+<meta name="keywords" content="Chaoyang Wang, Wang Chaoyang, 4real, 4real-video, 4d generaion, 4d reconstruction, tracking, deep-LK, binocular, photometric, stereo, multi-branched hierarchical segmentation, unsupervised learning depth">
 <style type="text/css">
 p {font-size:14px;font-family:arial;color:black;}
 li {font-size:14px;font-family:arial;color:black;}
@@ -76,7 +76,7 @@ name {
 <table border="0">
 
 <tr>
-	<td valign="top" width="250"><img src="projects/cvpr18_chaoyang/img2.png" width="200"></td>
+	<td valign="top" width="250"><img src="projects/cvpr18_chaoyang/img2.png" width="300"></td>
 	<td valign="top" width="600">
 	<h3>Learning Depth from Monocular Videos using Direct Methods</h3>
 	<p><strong>Chaoyang Wang</strong>, Jose Miguel Buenaposada, Rui Zhu, Simon Lucey<br />
@@ -98,7 +98,7 @@ along with a novel depth normalization strategy - substantially
 
 
 <!-- <tr>
-	<td width="250"><img src="projects/cvpr18_rui/img2.png" width="200"></td>
+	<td width="250"><img src="projects/cvpr18_rui/img2.png" width="300"></td>
 	<td valign="top" width="600">
 	<h3>Semantic Photometric Bundle Adjustment on Natural Sequences</h3>
 	<p>Rui Zhu, <strong>Chaoyang Wang</strong>, Ziyan Wang, Chen-Hsuan Lin, Simon Lucey<br />
@@ -122,23 +122,76 @@ across numerous natural sequences.
 
 
 <h2>Selected Publications & Manuscripts</h2>
+	<span><sup>*</sup>co-first author,</span>
+	<span><sup>&#8224</sup>corresponding author</span>
+
 
 
 
 	<table border="0">
+
 		<tr>
-			<td valign="middle" width="200">
-				<video autoplay muted loop width="200">
-					<source src="https://snap-research.github.io/4Real/resources/goodvideos_144/repo_0508_debug_multiview_video17_Frm000_10.mp4"  type="video/mp4">
+			<td valign="middle" width="350">
+				<video autoplay muted loop width="300">
+					<source src="https://snap-research.github.io/4Real-Video/resources/real_world_anim_labeled/04-highres-dy-cat-24fps.mp4"  type="video/mp4">
+				</video>
+				<video autoplay muted loop width="300">
+					<source src="https://snap-research.github.io/4Real-Video/resources/real_world_anim_labeled/04-highres-frz-cat-24fps.mp4"  type="video/mp4">
+				</video>
+			</td>
+			<td valign="middle" width="600">
+			<p>
+			<papertitle>4Real-Video: Learning Generalizable Photo-Realistic 4D Video Diffusion</papertitle>
+			<br>
+			<b>Chaoyang Wang</b><sup>*</sup><sup>&#8224</sup>, Peiye Zhuang<sup>*</sup>, Tuan Duc Ngo<sup>*</sup>, Willi Menapace, Aliaksandr Siarohin, Michael Vasilkovsky, Ivan Skorokhodov, Sergey Tulyakov, Peter Wonka, Hsin-Ying Lee
+			<br>
+			in Submission
+		<strong>[
+			<a href="https://snap-research.github.io/4Real-Video/">project</a>
+			]
+		</strong>
+		</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td valign="middle" width="350">
+				<center>
+				<video autoplay muted loop width="230">
+					<source src="https://snap-research.github.io/DELTA/resources/dense_videos/ours/birthcake.mp4"  type="video/mp4">
+				</video>
+				</center>
+			</td>
+			<td valign="middle" width="600">
+			<p>
+			<papertitle>DELTA: Dense Efficient Long-range 3D Tracking for Any Video</papertitle>
+			<br>
+			Tuan Duc Ngo, Peiye Zhuang, Chuang Gan, Evangelos Kalogerakis, Sergey Tulyakov, Hsin-Ying Lee, <b>Chaoyang Wang</b>
+			<br>
+			in Submission
+		<strong>[
+			<a href="https://snap-research.github.io/DELTA/">project</a>
+			]
+		</strong>
+		</p>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td valign="middle" width="350">
+				<video autoplay muted loop width="300">
+					<source src="https://snap-research.github.io/4Real/resources/teaser-1080p.mp4"  type="video/mp4">
 				</video>
 			</td>
 			<td valign="middle" width="600">
 			<p>
 			<papertitle>4Real: Towards Photorealistic 4D Scene Generation via Video Diffusion Models</papertitle>
 			<br>
-			Heng Yu<sup>*</sup>, Chaoyang Wang<sup>*</sup>, Peiye Zhuang, Willi Menapace, Aliaksandr Siarohin, Junli Cao, László A. Jeni, Sergey Tulyakov, Hsin-Ying Lee
+			Heng Yu<sup>*</sup>, <b>Chaoyang Wang</b><sup>*</sup>, Peiye Zhuang, Willi Menapace, Aliaksandr Siarohin, Junli Cao, László A. Jeni, Sergey Tulyakov, Hsin-Ying Lee
 			<br>
-			in Submission
+			NeurIPS 2024
 		<strong>[
 			<a href="https://snap-research.github.io/4Real/">project</a>
 			]
@@ -148,16 +201,16 @@ across numerous natural sequences.
 		</tr>
 
 		<tr>
-			<td valign="middle" width="200">
-				<video autoplay muted loop width="200">
-					<source src="https://snap-research.github.io/GTR/GTR_files/syn.mp4"  type="video/mp4">
-				</video>
+			<td valign="middle" width="350">
+				<!-- <div style="position: relative; width: 100%; overflow: hidden; height: 50%;"> -->
+				<video autoplay muted loop width="300" src="projects/gtr/teaser.mp4" type="video/mp4">
+				</div>
 			</td>
 			<td valign="middle" width="600">
 			<p>
 			<papertitle>GTR: Improving Large 3D Reconstruction Models through Geometry and Texture Refinement</papertitle>
 			<br>
-			Peiye Zhuang, Songfang Han,  Chaoyang Wang, Aliaksandr Siarohin, Jiaxu Zou, Michael Vasilkovsky,
+			Peiye Zhuang, Songfang Han,  <b>Chaoyang Wang</b>, Aliaksandr Siarohin, Jiaxu Zou, Michael Vasilkovsky,
 			Vladislav Shakhrai, Sergey Korolev, Sergey Tulyakov, Hsin-Ying Lee
 			<br>
 			in Submission
@@ -170,16 +223,19 @@ across numerous natural sequences.
 		</tr>
 
 		<tr>
-			<td valign="middle" width="200">
-				<video autoplay muted loop width="200">
+			<td valign="middle" width="350">
+				<video autoplay muted loop width="150">
 					<source src="https://zqh0253.github.io/SceneWiz3D/media/diverse/9.mp4"  type="video/mp4">
+				</video>
+				<video autoplay muted loop width="150">
+					<source src="https://zqh0253.github.io/SceneWiz3D/media/artistic/9.mp4" type="video/mp4">
 				</video>
 			</td>
 			<td valign="middle" width="600">
 			<p>
 			<papertitle>SceneWiz3D: Towards Text-guided 3D Scene Composition</papertitle>
 			<br>
-			Qihang Zhang, Chaoyang Wang, Aliaksandr Siarohin, Peiye Zhuang, Yinghao Xu, Ceyuan Yang, Dahua Lin, Bolei Zhou, Sergey Tulyakov, Hsin-Ying Lee
+			Qihang Zhang, <b>Chaoyang Wang</b>, Aliaksandr Siarohin, Peiye Zhuang, Yinghao Xu, Ceyuan Yang, Dahua Lin, Bolei Zhou, Sergey Tulyakov, Hsin-Ying Lee
 			<br>
 			CVPR 2024
 		<strong>[
@@ -192,16 +248,16 @@ across numerous natural sequences.
 
 
 		<tr>
-			<td valign="middle" width="200">
-				<video autoplay muted loop width="200">
-					<source src="https://snap-research.github.io/3DVADER/media/obj_cond/output_4.mp4"  type="video/mp4">
+			<td valign="middle" width="350">
+				<video autoplay muted loop width="300">
+					<source src="projects/3dvader/teaser.mp4"  type="video/mp4">
 				</video>
 			</td>
 			<td valign="middle" width="600">
 			<p>
 			<papertitle>3D VADER - AutoDecoding Latent 3D Diffusion Models</papertitle>
 			<br>
-			Evangelos Ntavelis, Aliaksandr Siarohin, Kyle Olszewski, Chaoyang Wang, Luc Van Gool, Sergey Tulyakov
+			Evangelos Ntavelis, Aliaksandr Siarohin, Kyle Olszewski, <b>Chaoyang Wang</b>, Luc Van Gool, Sergey Tulyakov
 			<br>
 			NeurIPS 2023
 		<strong>[
@@ -212,14 +268,13 @@ across numerous natural sequences.
 			</td>
 		</tr>
 
-
 		<tr>
-			<td valign="middle" width="250"><img src="projects/fsdnerf/resources/illu.png" width="200"></td>
+			<td valign="middle" width="350"><img src="projects/fsdnerf/resources/illu.png" width="300"></td>
 			<td valign="middle" width="600">
 			<p>
 			<papertitle>Flow Supervison for Deformable NeRF</papertitle>
 			<br>
-			Chaoyang Wang, Lachlan E. MacDonald, Laszlo A. Jeni, Simon Lucey
+			<b>Chaoyang Wang</b>, Lachlan E. MacDonald, Laszlo A. Jeni, Simon Lucey
 			<br>
 			CVPR 2023 (Highlight)
 		<strong>[
@@ -231,8 +286,8 @@ across numerous natural sequences.
 		</tr>
 	
 		<tr>
-			<td valign="middle" width="200">
-				<video autoplay muted loop width="200">
+			<td valign="middle" width="350">
+				<video autoplay muted loop width="300">
 					<source src="https://gengshan-y.github.io/images/rac.mp4"  type="video/mp4">
 				</video>
 			</td>
@@ -240,7 +295,7 @@ across numerous natural sequences.
 			<p>
 			<papertitle>RAC: Reconstructing Animatable Categories from Videos</papertitle>
 			<br>
-			Gengshan Yang, Chaoyang Wang, N dinesh reddy, Deva Ramanan
+			Gengshan Yang, <b>Chaoyang Wang</b>, N dinesh reddy, Deva Ramanan
 			<br>
 			CVPR 2023
 		<strong>[
@@ -255,10 +310,10 @@ across numerous natural sequences.
 	<table border="0">
 
 		<tr>
-			<td valign="topleft" width="250">	
-					<img src="projects/cvpr22/b1c_ntp.gif" width="110">	
-					<img src="projects/cvpr22/6db_ntp.gif" width="110">	
-			<video width="200" autoplay loop muted>
+			<td valign="topleft" width="350">	
+					<!-- <img src="projects/cvpr22/b1c_ntp.gif" width="150">	
+					<img src="projects/cvpr22/6db_ntp.gif" width="150">	 -->
+			<video width="300" autoplay loop muted>
 				<source src="projects/ntp/balloon_teaser.mp4" type="video/mp4" />
 			</video>
 			</td>
@@ -267,7 +322,7 @@ across numerous natural sequences.
 			<p>
 				<papertitle>Neural Priors for Trajectory Estimation</papertitle>
 				<br>
-				Chaoyang Wang, Xueqian Li,  Jhony Kaesemodel Pontes, Simon Lucey
+				<b>Chaoyang Wang</b>, Xueqian Li,  Jhony Kaesemodel Pontes, Simon Lucey
 				<br>
 				CVPR 2022
 				<strong>[
@@ -279,7 +334,7 @@ across numerous natural sequences.
 			<p>
 			<papertitle>Neural Trajectory Fields for Dynamic Novel View Synthesis</papertitle>
 			<br>
-			Chaoyang Wang, Ben Eckart, Simon Lucey, Orazio Gallo
+			<b>Chaoyang Wang</b>, Ben Eckart, Simon Lucey, Orazio Gallo
 			<br>
 			 2021
 		<strong>[
@@ -315,7 +370,7 @@ across numerous natural sequences.
 <!-- <table border="0">
 
 	<tr>
-		<td valign="top" width="250"><img src="" width="200"></td>
+		<td valign="top" width="250"><img src="" width="300"></td>
 		<td valign="top" width="600">
 		<p>
 		<papertitle>High Fidelity 3D Reconstructions with Limited Physical Views</papertitle>
@@ -369,7 +424,7 @@ across numerous natural sequences.
 		<br>
 		3DV 2020 (oral)
 		<strong>[
-			<a href="https://arxiv.org/pdf/2001.10090.pdf">arxiv</a>
+			<a href="https://arxiv.org/pdf/3001.10090.pdf">arxiv</a>
 		]
 	</strong>
 	</p>
@@ -501,7 +556,7 @@ across numerous natural sequences.
 	</tr>
 
 <!-- <tr>
-	<td valign="top" width="250"><img src="" width="200"></td>
+	<td valign="top" width="250"><img src="" width="300"></td>
 	<td valign="top" width="600">
 	<p>
 	<papertitle>Object-Centric Photometric Bundle Adjustment with Deep Shape Prior</papertitle>
@@ -544,7 +599,7 @@ across numerous natural sequences.
 	CVPR 2015
 	<strong>[
 	<a href="projects/objprop/Wang_Object_Proposal_by_2015_CVPR_paper.pdf">PDF</a>,
-	<a href="http://pan.baidu.com/s/1oLDQe">VOC2007 test result</a>
+	<a href="http://pan.baidu.com/s/1oLDQe">VOC3007 test result</a>
 	]
 	</strong></p>
 	</td>
@@ -575,7 +630,7 @@ across numerous natural sequences.
 <table>
 <tr><h3>Multi-task Asynchronous Deep Reinforcement Learning</h3></tr>
 <tr>
-	<td width="250"><img src="projects/703/img.png" width="200"></td>
+	<td width="250"><img src="projects/703/img.png" width="300"></td>
 	<td valign="top" width="600"> <p>We propose a computationally efficient multi-task
 asynchronous learning framework, which requires only multi-threading on CPU
 for training, generalizable to a wide variety of RL methods, and in theory, scales
@@ -589,7 +644,7 @@ games.[<a href="projects/703/RL_project.pdf">PDF</a>]</p></td>
 <table>
 <tr><h3>Wasserstein Training of Deep Boltzmann Machines</h3></tr>
 <tr>
-	<td width="250"><img src="projects/703/img.png" width="200"></td>
+	<td width="250"><img src="projects/703/img.png" width="300"></td>
 	<td valign="top" width="850"> <p>We proposed a general Wasserstein training method for graphical models by replacing the standard KL-divergence with Wasserstein distance as novel loss functions.
 		And we developed Wasserstein training of
 RBMs and DBMs as specific examples. Finally,
@@ -614,7 +669,7 @@ training.[<a href="projects/708/pgm_project_final.pdf">PDF</a>]</p> </td>
 </table> -->
 
 <hr>
-<i>Last modified by Wang Chaoyang, 2024-06-20.</i>
+<i>Last modified by Wang Chaoyang, 2025-01-12.</i>
 <div style="display:none"><a href='ri_thesis_poposal.pdf'><!-- nothing --></a></div>
 <!-- <hr>
 <table border="0">
